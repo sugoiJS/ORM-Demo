@@ -1,0 +1,24 @@
+{
+  "name": "lecture-sugoijs",
+  "version": "1.0.0",
+  "description": "Demonstrating the SugoiJS package abilities using decorators",
+  "main": "index.js",
+  "scripts": {
+    "sugoi": "npm run build && node ./dist/SugoiJS"
+  },
+  "keywords": [
+    "SugoiJS",
+    "Sugoi",
+    "Demo",
+    "ORM",
+    "Decortators"
+  ],
+  "author": "Orel Balilti",
+  "license": "MIT",
+  "dependencies": {
+    "@sugoi/core": "^3.1.1",
+    "@sugoi/orm": "^3.1.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
