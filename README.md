@@ -17,12 +17,12 @@ SugoiJS ORM demo contains 2 files application for demonstrating the ORM module a
 
 ### PostModel
 
-  This model display the abilities of handling data using SugoiJS ORM module.
+  This model shows the abilities of SugoiJS ORM module for data handling.
 
   That includes basic validation, hooks and meta-properties.
 
 ### Index file
-  The application entry point that apply all of the model methods
+  The application entry point which applys all of the model methods
 
 ## Documentation
 
