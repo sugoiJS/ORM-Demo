@@ -42,18 +42,19 @@ export class PostModel extends ModelAbstract implements IBeforeSave, IBeforeUpda
     }
 
     beforeFind(query: any, options?: Partial<QueryOptions | any>): Promise<any> | void {
-        console.log("Going to find %s",PostModel.getIdFromQuery(this,this,false) || "");
+        const message = typeof query === "number" ?"Going to find resource by id %s" : "Going to find resources";
+        console.log(message,query);
     }
 
     beforeUpdate(): Promise<any> | void {
-        console.log("Going to update %s",PostModel.getIdFromQuery(this,this,false));
+        console.log("Going to update id %s",PostModel.getIdFromQuery(this,this,false));
         if(this.updatePublishDate){
             this.publishDate = new Date();
         }
     }
 
     beforeRemove(id: any, options?: Partial<QueryOptions | any>): Promise<any> | void {
-        console.log("Going to remove %s",id);
+        console.log("Going to remove id %s",id);
     }
 
 

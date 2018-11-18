@@ -1,10 +1,11 @@
 {
-  "name": "lecture-sugoijs",
+  "name": "orm-demo",
   "version": "1.0.0",
   "description": "Demonstrating the SugoiJS package abilities using decorators",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "sugoi": "npm run build && node ./dist/SugoiJS"
+    "build": "rimraf dist && tsc",
+    "start": "npm run build && node ./dist/index.js"
   },
   "keywords": [
     "SugoiJS",
@@ -19,6 +20,10 @@
     "@sugoi/core": "^3.1.1",
     "@sugoi/orm": "^3.1.1",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "typescript": "^3.1.6"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
   }
 }

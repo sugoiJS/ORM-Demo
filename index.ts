@@ -13,31 +13,39 @@ async function FindModel(id?: number) {
         ? PostModel.findById(11)
         : PostModel.find();
 }
+
 async function SaveModel() {
     const model = PostModel.builder().setBody(1);
-    try {
-        await model.save();
-    } catch (err) {
-    }
+
+    await model.save()
+        .then(res => console.log("Saved successfully %s", JSON.stringify(res)))
+        .catch(err=>err);
+
     model.setTitle("try");
-    try {
-        await model.save().then(res => console.log("Saved successfully"));
-    }catch(err) {}
+    await model.save()
+        .then(res => console.log("Saved successfully %s", JSON.stringify(res)))
+        .catch(err=>err);
+
     model.setBody("I'm good");
-    await model.save().then(res => console.log("Saved successfully"));
+    await model.save()
+        .then(res => console.log("Saved successfully %s", JSON.stringify(res)))
+        .catch(err=>err);
 
 }
 
-async function UpdateModel(id:number) {
-    return await PostModel.updateById(id, {title: "try me"});
+async function UpdateModel(id: number) {
+    return await PostModel.updateById(id, {title: "try me"})
+        .then(res => console.log("Updated successfully %s", JSON.stringify(res)))
+        .catch(console.error);
 }
 
-async function RemoveModel(id:number) {
-    return await PostModel.removeById(id);
+async function RemoveModel(id: number) {
+    return await PostModel.removeById(id)
+        .then(res => console.log("Removed successfully %s", JSON.stringify(res)))
+        .catch(console.error);
 }
 
 
-main()
-    .then(() => {
-        console.log("Completed");
-    });
+main().then(() => {
+    console.log("Completed");
+});
